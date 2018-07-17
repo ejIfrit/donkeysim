@@ -5,6 +5,7 @@ Create a server to accept image inputs and run them against a trained neural net
 This then sends the steering output back to the client.
 Author: Tawn Kramer
 '''
+# going to start editing this guy here
 from __future__ import print_function
 import os
 import argparse
@@ -112,7 +113,7 @@ class SteeringServer(object):
             skip_sid=True)
 
     def go(self, model_fnm, address):
-        
+
         self.model = keras.models.load_model(model_fnm)
 
         #In this mode, looks like we have to compile it
@@ -171,4 +172,3 @@ if __name__ == "__main__":
     model_fnm = args.model
     address = ('0.0.0.0', 9090)
     run_steering_server(address, model_fnm, image_folder=args.image_folder)
-    
